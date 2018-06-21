@@ -6,11 +6,18 @@ import './app.css'
 
 
 const App = () => (
-  <div className="container">
-    <div className="row">
-      <WeatherCard />
-      {/* <WeatherCard />
-      <WeatherCard /> */}
+  <div>
+    <div className="container">
+      <div className="row">
+        <WeatherCard />
+        <WeatherCard />
+      </div>
+    </div>
+    <div className="container">
+      <div className="row">
+        <WeatherCard />
+        <WeatherCard />
+      </div>
     </div>
   </div>
 )
