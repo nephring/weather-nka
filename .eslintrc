@@ -1,0 +1,15 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "semi": ["error", "never"],
+    "no-console": "warn",
+    "comma-dangle": ["error", "never"],
+    "space-before-function-paren": ["error", "always"],
+    "max-len": ["warn", {
+      "code": 120,
+      "comments": 120,
+      "ignoreRegExpLiterals": true,
+      "ignoreUrls": true
+    }]
+  }
+}
