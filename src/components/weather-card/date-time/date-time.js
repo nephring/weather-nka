@@ -1,0 +1,1 @@
+// Display time and date of the location with seconds
