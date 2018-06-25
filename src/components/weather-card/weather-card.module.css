@@ -8,7 +8,7 @@
   -moz-box-shadow: 1px 1px 1px 1px rgba(168, 165, 168, 0.8);
 }
 
-.flex-container {
+.flexContainer {
   display: flex;
 }
 

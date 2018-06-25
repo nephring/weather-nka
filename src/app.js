@@ -2,19 +2,19 @@ import React from 'react'
 
 import WeatherCard from './components/weather-card/weather-card'
 
-import './app.css'
+import styles from './app.module.css'
 
 
 const App = () => (
   <div>
-    <div className="container">
-      <div className="row">
+    <div className={styles.container}>
+      <div className={styles.row}>
         <WeatherCard />
         <WeatherCard />
       </div>
     </div>
-    <div className="container">
-      <div className="row">
+    <div className={styles.container}>
+      <div className={styles.row}>
         <WeatherCard />
         <WeatherCard />
       </div>
