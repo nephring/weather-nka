@@ -1,1 +1,12 @@
-// Display time and date of the location with seconds
+import React from 'react'
+
+import styles from './date-time.module.css'
+
+const DateTime = () => (
+  <div className={styles.container}>
+    <h2 className={styles.time}>14:00:23</h2>
+    <p className={styles.date}>Thursday, May 19, 2016</p>
+  </div>
+)
+
+export default DateTime
