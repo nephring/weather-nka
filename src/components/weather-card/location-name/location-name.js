@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './location-name.module.css'
+import styles from './location-name.module.scss'
 
 const LocationName = () => (
   <div className={styles.container}>

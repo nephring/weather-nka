@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './date-time.module.css'
+import styles from './date-time.module.scss'
 
 const DateTime = () => (
   <div className={styles.container}>

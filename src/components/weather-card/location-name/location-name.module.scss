@@ -1,0 +1,24 @@
+@import './../../../app/web-fonts.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.city {
+  margin: 0;
+  font-weight: 700;
+}
+
+.country {
+  margin-top: 2%;
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    align-items: center;
+  }
+}

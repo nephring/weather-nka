@@ -1,0 +1,25 @@
+@import './../../../app/variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+  margin-bottom: 4%;
+  justify-content: flex-end;
+  width: $col7;
+  // background: red;
+}
+
+.time, .date {
+  margin: 0;
+}
+
+.date {
+  margin-top: 5%;
+}
+
+@media screen and (max-width:640px) {
+  .container {
+    width: $col6;
+  }
+}

@@ -1,71 +1,48 @@
 @import './../../app/variables.scss';
 
-/*
-Desktop resolution
-*/
-@media screen and (min-width: 1281px) {
-  .card {
-    display: flex;
-    width: 640px;
-    height: 400px;
-    margin: 1%;
-    border: 1px solid black;
-  }
-
-  .main {
-    background: #eee;
-    width: $col7;
-  }
-
-  .details {
-    background: rgb(155, 155, 155);
-    width: $col5;
-  }
+.card {
+  display: flex;
+  width: 640px;
+  // min-height: 400px;
+  margin: 1%;
+  border: 1px solid black;
 }
 
-/*
-Tablet resolution
-*/
-@media screen and (min-width: 768px) and (max-width: 1280px){
-  .card {
-    display: flex;
-    width: 640px;
-    height: 400px;
-    margin: 1%;
-    border: 1px solid black;
-  }
+.main {
+  display: flex;
+  width: $col7;
+  flex-direction: column;
+  background: #eee;
 
-  .main {
-    background: #eee;
-    width: $col7;
-  }
-
-  .details {
-    background: rgb(155, 155, 155);
-    width: $col5;
-  }
 }
 
-/*
-Phone resolution
-*/
-@media screen and (min-width: 320px) and (max-width: 767px){
+.details {
+  display: flex;
+  width: $col5;
+  background: #aaa;
+}
+
+.mainRowWrapper {
+  display: flex;
+  width: $col12;
+  margin-top: 50%;
+}
+
+@media screen and (max-width: 640px) {
   .card {
-    display: flex;
-    width: 640px;
-    height: 400px;
-    margin: 1%;
-    border: 1px solid black;
     flex-wrap: wrap;
   }
 
   .main {
-    background: #eee;
     width: $col12;
   }
 
   .details {
-    background: rgb(155, 155, 155);
     width: $col12;
+    flex-direction: column;
+  }
+
+  .mainRowWrapper {
+    margin-top: 5%;
   }
 }
