@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { SunIcon, HumidityIcon, WindIcon } from './../../icons/icons'
+import { ClearSkyDayIcon, HumidityIcon, WindIcon } from './../../icons/icons'
 
 import styles from './details.module.scss'
 
 const Details = () => (
   <div className={styles.container}>
     <div className={styles.mainConditionIcon}>
-      <SunIcon />
+      <ClearSkyDayIcon />
       <p>Sunny</p>
     </div>
     <hr className={styles.separator} />

@@ -1,145 +1,122 @@
 import React from 'react'
-import cloudFogIcon from './svg/cloud-fog.svg'
-import cloudRainLightIcon from './svg/cloud-rain-light.svg'
-import cloudRainIcon from './svg/cloud-rain.svg'
-import fogIcon from './svg/fog.svg'
-import moonCloudRainLightIcon from './svg/moon-cloud-rain-light.svg'
-import moonCloudRainIcon from './svg/moon-cloud-rain.svg'
-import moonCloudSnowIcon from './svg/moon-cloud-snow.svg'
-import moonCloudIcon from './svg/moon-cloud.svg'
-import moonFogIcon from './svg/moon-fog.svg'
-import moonIcon from './svg/moon.svg'
-import sunCloudRainLightIcon from './svg/sun-cloud-rain-light.svg'
-import sunCloudRainIcon from './svg/sun-cloud-rain.svg'
-import sunCloudSnowIcon from './svg/sun-cloud-snow.svg'
-import sunCloudIcon from './svg/sun-cloud.svg'
-import sunFogIcon from './svg/sun-fog.svg'
-import sunIcon from './svg/sun.svg'
-import humidityIcon from './svg/humidity.svg'
-import windIcon from './svg/wind.svg'
 
-export const CloudFogIcon = () => (
+import thunderstorm from './svg/thunderstorm.svg'
+import rain from './svg/rain.svg'
+import rainIntense from './svg/rain-intense.svg'
+import snow from './svg/snow.svg'
+import snowIntense from './svg/rain-intense.svg'
+import mist from './svg/mist.svg'
+import clearSkyNight from './svg/clear-sky_n.svg'
+import clearSkyDay from './svg/clear-sky_d.svg'
+import cloudsFewNight from './svg/clouds-few_n.svg'
+import cloudsFewDay from './svg/clouds-few_d.svg'
+import cloudsMany from './svg/clouds-many.svg'
+import humidity from './svg/humidity.svg'
+import pressure from './svg/pressure.svg'
+import temperature from './svg/temperature.svg'
+import wind from './svg/wind.svg'
+
+export const ThunderstormIcon = () => (
   <img
-    src={cloudFogIcon}
-    alt="cloud-fog-icon"
+    src={thunderstorm}
+    alt="thunderstorm-icon"
     width={130}
   />)
 
-export const CloudRainLightIcon = () => (
+export const RainIcon = () => (
   <img
-    src={cloudRainLightIcon}
-    alt="cloud-rain-light-icon"
+    src={rain}
+    alt="rain-icon"
     width={130}
   />)
 
-export const CloudRainIcon = () => (
+export const RainIntenseIcon = () => (
   <img
-    src={cloudRainIcon}
-    alt="cloud-rain-icon"
+    src={rainIntense}
+    alt="rain-intense-icon"
     width={130}
   />)
 
-export const FogIcon = () => (
+export const SnowIcon = () => (
   <img
-    src={fogIcon}
-    alt="fog-icon"
+    src={snow}
+    alt="snow-icon"
     width={130}
   />)
 
-export const MoonCloudRainLightIcon = () => (
+export const SnowIntenseIcon = () => (
   <img
-    src={moonCloudRainLightIcon}
-    alt="moon-cloud-rain-light-icon"
+    src={snowIntense}
+    alt="snow-intense-icon"
     width={130}
   />)
 
-export const MoonCloudRainIcon = () => (
+export const MistIcon = () => (
   <img
-    src={moonCloudRainIcon}
-    alt="moon-cloud-rain-icon"
+    src={mist}
+    alt="mist-icon"
     width={130}
   />)
 
-export const MoonCloudSnowIcon = () => (
+export const ClearSkyNightIcon = () => (
   <img
-    src={moonCloudSnowIcon}
-    alt="moon-cloud-snow-icon"
+    src={clearSkyNight}
+    alt="clear-sky-night-icon"
     width={130}
   />)
 
-export const MoonCloudIcon = () => (
+export const ClearSkyDayIcon = () => (
   <img
-    src={moonCloudIcon}
-    alt="moon-cloud-icon"
+    src={clearSkyDay}
+    alt="clear-sky-day-icon"
     width={130}
   />)
 
-export const MoonFogIcon = () => (
+export const CloudsFewDayIcon = () => (
   <img
-    src={moonFogIcon}
-    alt="moon-fog-icon"
+    src={cloudsFewDay}
+    alt="clouds-few-day-icon"
     width={130}
   />)
 
-export const MoonIcon = () => (
+export const CloudsFewNightIcon = () => (
   <img
-    src={moonIcon}
-    alt="moon-icon"
+    src={cloudsFewNight}
+    alt="clouds-few-night-icon"
     width={130}
   />)
 
-export const SunCloudRainLightIcon = () => (
+export const CloudsManyIcon = () => (
   <img
-    src={sunCloudRainLightIcon}
-    alt="sun-cloud-rain-light-icon"
-    width={130}
-  />)
-
-export const SunCloudRainIcon = () => (
-  <img
-    src={sunCloudRainIcon}
-    alt="sun-cloud-rain-icon"
-    width={130}
-  />)
-
-export const SunCloudSnowIcon = () => (
-  <img
-    src={sunCloudSnowIcon}
-    alt="sun-cloud-snow-icon"
-    width={130}
-  />)
-
-export const SunCloudIcon = () => (
-  <img
-    src={sunCloudIcon}
-    alt="sun-cloud-icon"
-    width={130}
-  />)
-
-export const SunFogIcon = () => (
-  <img
-    src={sunFogIcon}
-    alt="sun-fog-icon"
-    width={130}
-  />)
-
-export const SunIcon = () => (
-  <img
-    src={sunIcon}
-    alt="sun-icon"
+    src={cloudsMany}
+    alt="clouds-many-icon"
     width={130}
   />)
 
 export const HumidityIcon = () => (
   <img
-    src={humidityIcon}
+    src={humidity}
     alt="humidity-icon"
-    width={40}
+    width={25}
+  />)
+
+export const PressureIcon = () => (
+  <img
+    src={pressure}
+    alt="pressure-icon"
+    width={25}
+  />)
+
+export const TemperatureIcon = () => (
+  <img
+    src={temperature}
+    alt="temperature-icon"
+    width={25}
   />)
 
 export const WindIcon = () => (
   <img
-    src={windIcon}
+    src={wind}
     alt="wind-icon"
-    width={40}
+    width={25}
   />)
