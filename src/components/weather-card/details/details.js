@@ -6,15 +6,17 @@ import styles from './details.module.scss'
 
 const Details = () => (
   <div className={styles.container}>
-    <div className={styles.conditionIcon}>
+    <div className={styles.mainConditionIcon}>
       <SunIcon />
+      <p>Sunny</p>
     </div>
-    <div className={styles.smallDetails}>
-      <div className={styles.humidity}>
+    <hr className={styles.separator} />
+    <div className={styles.conditionSection}>
+      <div className={styles.conditionEntity}>
         <HumidityIcon />
         <p>35%</p>
       </div>
-      <div className={styles.wind}>
+      <div className={styles.conditionEntity}>
         <WindIcon />
         <p>7 m/s</p>
       </div>

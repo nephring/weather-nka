@@ -6,27 +6,36 @@
   flex-direction: column;
 }
 
-.humidity {
+.separator {
+  width: 230px;
+}
+
+.mainConditionIcon {
   display: flex;
-  align-items: center;
-}
-
-.humidity p {
-  font-family: 'Roboto';
-}
-
-.wind {
-  display: flex;
-  align-items: center;
-}
-
-.wind p {
-  font-family: 'Roboto';
-}
-
-.conditionIcon {
-  display: flex;
+  flex-direction: column;
   margin-top: 7%;
-  margin-bottom: 10%;
-  align-self: flex-start;
+  align-items: center;
+}
+
+.mainConditionIcon p {
+  margin: 10% 0 0;
+  font-size: 1.6em;
+}
+
+.conditionSection {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.conditionEntity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 25%;
+  margin-right: 25%
+}
+
+.conditionEntity p {
+  margin: 0;
 }

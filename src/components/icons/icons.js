@@ -22,124 +22,124 @@ export const CloudFogIcon = () => (
   <img
     src={cloudFogIcon}
     alt="cloud-fog-icon"
-    width={150}
+    width={130}
   />)
 
 export const CloudRainLightIcon = () => (
   <img
     src={cloudRainLightIcon}
     alt="cloud-rain-light-icon"
-    width={150}
+    width={130}
   />)
 
 export const CloudRainIcon = () => (
   <img
     src={cloudRainIcon}
     alt="cloud-rain-icon"
-    width={150}
+    width={130}
   />)
 
 export const FogIcon = () => (
   <img
     src={fogIcon}
     alt="fog-icon"
-    width={150}
+    width={130}
   />)
 
 export const MoonCloudRainLightIcon = () => (
   <img
     src={moonCloudRainLightIcon}
     alt="moon-cloud-rain-light-icon"
-    width={150}
+    width={130}
   />)
 
 export const MoonCloudRainIcon = () => (
   <img
     src={moonCloudRainIcon}
     alt="moon-cloud-rain-icon"
-    width={150}
+    width={130}
   />)
 
 export const MoonCloudSnowIcon = () => (
   <img
     src={moonCloudSnowIcon}
     alt="moon-cloud-snow-icon"
-    width={150}
+    width={130}
   />)
 
 export const MoonCloudIcon = () => (
   <img
     src={moonCloudIcon}
     alt="moon-cloud-icon"
-    width={150}
+    width={130}
   />)
 
 export const MoonFogIcon = () => (
   <img
     src={moonFogIcon}
     alt="moon-fog-icon"
-    width={150}
+    width={130}
   />)
 
 export const MoonIcon = () => (
   <img
     src={moonIcon}
     alt="moon-icon"
-    width={150}
+    width={130}
   />)
 
 export const SunCloudRainLightIcon = () => (
   <img
     src={sunCloudRainLightIcon}
     alt="sun-cloud-rain-light-icon"
-    width={150}
+    width={130}
   />)
 
 export const SunCloudRainIcon = () => (
   <img
     src={sunCloudRainIcon}
     alt="sun-cloud-rain-icon"
-    width={150}
+    width={130}
   />)
 
 export const SunCloudSnowIcon = () => (
   <img
     src={sunCloudSnowIcon}
     alt="sun-cloud-snow-icon"
-    width={150}
+    width={130}
   />)
 
 export const SunCloudIcon = () => (
   <img
     src={sunCloudIcon}
     alt="sun-cloud-icon"
-    width={150}
+    width={130}
   />)
 
 export const SunFogIcon = () => (
   <img
     src={sunFogIcon}
     alt="sun-fog-icon"
-    width={150}
+    width={130}
   />)
 
 export const SunIcon = () => (
   <img
     src={sunIcon}
     alt="sun-icon"
-    width={150}
+    width={130}
   />)
 
 export const HumidityIcon = () => (
   <img
     src={humidityIcon}
     alt="humidity-icon"
-    width={50}
+    width={40}
   />)
 
 export const WindIcon = () => (
   <img
     src={windIcon}
     alt="wind-icon"
-    width={50}
+    width={40}
   />)
