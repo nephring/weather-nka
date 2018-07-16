@@ -13,13 +13,13 @@
   width: $col7;
   flex-direction: column;
   background: #eee;
-
 }
 
 .details {
   display: flex;
   width: $col5;
   background: #aaa;
+  justify-content: center;
 }
 
 .mainRowWrapper {

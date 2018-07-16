@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'moment'
+import moment from 'moment-timezone'
 
 import styles from './date-time.module.scss'
 
@@ -12,18 +12,18 @@ class DateTime extends React.Component {
 
   getTime = () => {
     return (
-      `${moment().format('HH')}:` +
-      `${moment().format('mm')}:` +
-      `${moment().format('ss')}`
+      `${moment().tz('australia/sydney').format('HH')}:` +
+      `${moment().tz('australia/sydney').format('mm')}:` +
+      `${moment().tz('australia/sydney').format('ss')}`
     )
   }
 
   getDate = () => {
     return (
-      `${moment().format('dddd')}, ` +
-      `${moment().format('MMMM')} ` +
-      `${moment().format('D')}, ` +
-      `${moment().format('YYYY')}`
+      `${moment().tz('australia/sydney').format('dddd')}, ` +
+      `${moment().tz('australia/sydney').format('MMMM')} ` +
+      `${moment().tz('australia/sydney').format('D')}, ` +
+      `${moment().tz('australia/sydney').format('YYYY')}`
     )
   }
 

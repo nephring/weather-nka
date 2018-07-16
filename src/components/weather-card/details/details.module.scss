@@ -1,0 +1,32 @@
+@import './../../../app/web-fonts.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.humidity {
+  display: flex;
+  align-items: center;
+}
+
+.humidity p {
+  font-family: 'Roboto';
+}
+
+.wind {
+  display: flex;
+  align-items: center;
+}
+
+.wind p {
+  font-family: 'Roboto';
+}
+
+.conditionIcon {
+  display: flex;
+  margin-top: 7%;
+  margin-bottom: 10%;
+  align-self: flex-start;
+}

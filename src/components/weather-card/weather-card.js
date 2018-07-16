@@ -3,6 +3,7 @@ import React from 'react'
 import LocationName from './location-name/location-name'
 import DateTime from './date-time/date-time'
 import Temperature from './temperature/temperature'
+import Details from './details/details'
 
 import styles from './weather-card.module.scss'
 
@@ -16,7 +17,7 @@ const WeatherCard = () => (
       </div>
     </div>
     <div className={styles.details}>
-    <p>test</p>
+      <Details />
       {
         //details here 
       }
