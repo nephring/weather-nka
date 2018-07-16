@@ -2,18 +2,26 @@
 
 Weather icons come from https://www.flaticon.com/packs/weather-linear.
 
-### Icon list
+### Weather condition icon list
 | Day Icon                 | Night Icon               | Description      |
 |--------------------------|--------------------------|------------------|
+| clear-sky_d.svg          | clear-sky_n.svg          | clear sky        |
+| clouds-few_d.svg         | clouds-few_n.svg         | clouds few       |
+| clouds-many.svg          | clouds-many.svg          | clouds many      |
 | thunderstorm.svg         | thunderstorm.svg         | thunderstorm     |
 | rain.svg                 | rain.svg                 | rain             |
 | rain-intense.svg         | rain-intense.svg         | rain intense     |
 | snow.svg                 | snow.svg                 | snow             |
 | snow-intense.svg         | snow-intense.svg         | snow intense     |
 | mist.svg                 | mist.svg                 | mist             |
-| clear-sky_d.svg          | clear-sky_n.svg          | clear sky        |
-| clouds-few_d.svg         | clouds-few_n.svg         | clouds few       |
-| clouds-many.svg          | clouds-many.svg          | clouds many      |
+
+### Weather additional icon list
+| Icon                 |   Description            |
+|----------------------|--------------------------|
+| humidity.svg         | humidity                 |
+| temperature.svg      | max and min temperature  |
+| wind.svg             | wind speed               |
+| pressure.svg         | atmospheric pressure     |
 
 ### Weather condition codes
 | ID      | Meaning      | Icon                                |
