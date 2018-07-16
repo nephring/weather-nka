@@ -3,11 +3,12 @@
 .container {
   display: flex;
   align-items: center;
+  align-content: center;
   flex-direction: column;
 }
 
 .separator {
-  width: 230px;
+  width: 90%;
 }
 
 .mainConditionIcon {
@@ -24,18 +25,8 @@
 
 .conditionSection {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   white-space: nowrap;
-}
-
-.conditionEntity {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 25%;
-  margin-right: 25%
-}
-
-.conditionEntity p {
-  margin: 0;
+  width: 100%;
+  padding: 10px;
 }

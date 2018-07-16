@@ -1,6 +1,7 @@
 import React from 'react'
+import ConditionEntity from './../condition-entity/condition-entity'
 
-import { ClearSkyDayIcon, HumidityIcon, WindIcon } from './../../icons/icons'
+import { ClearSkyDayIcon, HumidityIcon, WindIcon, TemperatureIcon, PressureIcon } from './../../icons/icons'
 
 import styles from './details.module.scss'
 
@@ -12,14 +13,22 @@ const Details = () => (
     </div>
     <hr className={styles.separator} />
     <div className={styles.conditionSection}>
-      <div className={styles.conditionEntity}>
-        <HumidityIcon />
-        <p>35%</p>
-      </div>
-      <div className={styles.conditionEntity}>
-        <WindIcon />
-        <p>7 m/s</p>
-      </div>
+      <ConditionEntity
+        iconComponent={<HumidityIcon />}
+        value='35%'
+      />
+      <ConditionEntity
+        iconComponent={<TemperatureIcon />}
+        value={(<span>25&deg;</span>)}
+      />
+      <ConditionEntity
+        iconComponent={<WindIcon />}
+        value='7 m/s'
+      />
+      <ConditionEntity
+        iconComponent={<PressureIcon />}
+        value='1012 hPa'
+      />
     </div>
     <div className={styles.forecast}>
       <p>test</p>
