@@ -6,9 +6,8 @@ Weather icons come from https://www.flaticon.com/packs/weather-linear.
 | Day Icon                 | Night Icon               | Description      |
 |--------------------------|--------------------------|------------------|
 | thunderstorm.svg         | thunderstorm.svg         | thunderstorm     |
-| rain-common.svg          | rain-common.svg          | rain common      |
-| rain-few_d.svg           | rain-few_n.svg           | rain few         |
-| rain-many.svg            | rain-many.svg            | rain many        |
+| rain.svg                 | rain.svg                 | rain             |
+| rain-intense.svg         | rain-intense.svg         | rain intense     |
 | snow-common.svg          | snow-common.svg          | snow common      |
 | snow-few_d.svg           | snow-few_n.svg           | snow few         |
 | snow-many.svg            | snow-many.svg            | snow many        |
