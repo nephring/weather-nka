@@ -3,7 +3,6 @@
 .card {
   display: flex;
   width: 700px;
-  // min-height: 400px;
   margin: 1%;
   border: 1px solid black;
 }
@@ -13,19 +12,19 @@
   width: $col7;
   flex-direction: column;
   background: #eee;
+  align-items: center;
+}
+
+.timeContainer {
+  display: flex;
+  margin-top: 15%;
+  white-space: nowrap;
 }
 
 .details {
   display: flex;
   width: $col5;
-  // background: #aaa;
   justify-content: center;
-}
-
-.mainRowWrapper {
-  display: flex;
-  width: $col12;
-  margin-top: 58%;
 }
 
 @media screen and (max-width: 700px) {
