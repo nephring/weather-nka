@@ -7,20 +7,30 @@
   flex-direction: column;
 }
 
-.separator {
-  width: 90%;
-}
-
-.mainConditionIcon {
+.conditionContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 7%;
   align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
-.mainConditionIcon p {
-  margin: 10% 0 0;
-  font-size: 1.6em;
+.temperatureWrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.conditionIcon {
+  margin: 0 15px 15px -15px;
+}
+
+.conditionStatus {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.separator {
+  width: 90%;
 }
 
 .conditionSection {

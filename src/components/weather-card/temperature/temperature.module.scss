@@ -1,24 +1,8 @@
 @import './../../../app/variables.scss';
 @import './../../../app/web-fonts.scss';
 
-.container {
-  display: flex;
-  width: $col5;
-  padding: 2% 5%;
-  justify-content: flex-end;
-  align-items: flex-end;
-  // background: yellow;
-}
-
 .temp {
   font-size: 5em;
-  font-family: 'Lato', sans-serif;
+  font-weight: 100;
   margin: 0;
-}
-
-@media screen and (max-width: 700px) {
-  .container {
-    width: $col6;
-    justify-content: flex-end;
-  }
 }

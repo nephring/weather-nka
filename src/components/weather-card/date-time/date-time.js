@@ -42,9 +42,9 @@ class DateTime extends React.Component {
   render () {
     return (
       <div className={styles.container}>
-        <h2 className={styles.time}>
+        <p className={styles.time}>
           {this.getTime()}
-        </h2>
+        </p>
         <p className={styles.date}>
           {this.getDate()}
         </p>

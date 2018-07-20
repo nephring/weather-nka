@@ -1,5 +1,6 @@
 import React from 'react'
 import ConditionEntity from './../condition-entity/condition-entity'
+import Temperature from './../temperature/temperature'
 import Forecast from '../forecast/forecast'
 
 import { ClearSkyDayIcon, HumidityIcon, WindIcon, TemperatureIcon, PressureIcon } from './../../icons/icons'
@@ -8,9 +9,15 @@ import styles from './details.module.scss'
 
 const Details = () => (
   <div className={styles.container}>
-    <div className={styles.mainConditionIcon}>
-      <ClearSkyDayIcon size={120} />
-      <p>Sunny</p>
+    <div className={styles.conditionContainer}>
+      <div className={styles.temperatureWrapper}>
+        <Temperature />
+        <div className={styles.conditionIcon}>
+          <ClearSkyDayIcon size={40} />
+        </div>
+      </div>
+      <span className={styles.conditionStatus}>Partly Cloudy</span>
+      <span>Reel feel: 19&deg;</span>
     </div>
     <hr className={styles.separator} />
     <div className={styles.conditionSection}>
