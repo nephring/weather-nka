@@ -16,107 +16,122 @@ import pressure from './svg/pressure.svg'
 import temperature from './svg/temperature.svg'
 import wind from './svg/wind.svg'
 
-export const ThunderstormIcon = () => (
+export const ThunderstormIcon = props => (
   <img
     src={thunderstorm}
     alt="thunderstorm-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const RainIcon = () => (
+export const RainIcon = props => (
   <img
     src={rain}
     alt="rain-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const RainIntenseIcon = () => (
+export const RainIntenseIcon = props => (
   <img
     src={rainIntense}
     alt="rain-intense-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const SnowIcon = () => (
+export const SnowIcon = props => (
   <img
     src={snow}
     alt="snow-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const SnowIntenseIcon = () => (
+export const SnowIntenseIcon = props => (
   <img
     src={snowIntense}
     alt="snow-intense-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const MistIcon = () => (
+export const MistIcon = props => (
   <img
     src={mist}
     alt="mist-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const ClearSkyNightIcon = () => (
+export const ClearSkyNightIcon = props => (
   <img
     src={clearSkyNight}
     alt="clear-sky-night-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const ClearSkyDayIcon = () => (
+export const ClearSkyDayIcon = props => (
   <img
     src={clearSkyDay}
     alt="clear-sky-day-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const CloudsFewDayIcon = () => (
+export const CloudsFewDayIcon = props => (
   <img
     src={cloudsFewDay}
     alt="clouds-few-day-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const CloudsFewNightIcon = () => (
+export const CloudsFewNightIcon = props => (
   <img
     src={cloudsFewNight}
     alt="clouds-few-night-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const CloudsManyIcon = () => (
+export const CloudsManyIcon = props => (
   <img
     src={cloudsMany}
     alt="clouds-many-icon"
-    width={130}
+    width={props.size}
+    height={props.size}
   />)
 
-export const HumidityIcon = () => (
+export const HumidityIcon = props => (
   <img
     src={humidity}
     alt="humidity-icon"
-    width={25}
+    width={props.size}
+    height={props.size}
   />)
 
-export const PressureIcon = () => (
+export const PressureIcon = props => (
   <img
     src={pressure}
     alt="pressure-icon"
-    width={25}
+    width={props.size}
+    height={props.size}
   />)
 
-export const TemperatureIcon = () => (
+export const TemperatureIcon = props => (
   <img
     src={temperature}
     alt="temperature-icon"
-    width={25}
+    width={props.size}
+    height={props.size}
   />)
 
-export const WindIcon = () => (
+export const WindIcon = props => (
   <img
     src={wind}
     alt="wind-icon"
-    width={25}
+    width={props.size}
+    height={props.size}
   />)
