@@ -6,9 +6,15 @@ import Details from './details/details'
 
 import styles from './weather-card.module.scss'
 
-const WeatherCard = () => (
+const WeatherCard = props => (
   <div className={styles.card}>
-    <div className={styles.main}>
+    <div
+      style={{ 
+        backgroundImage: props.cityImg,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover' 
+      }}
+      className={styles.main} >
       <LocationName />
       <div className={styles.timeContainer}>
         <DateTime />

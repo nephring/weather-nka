@@ -13,6 +13,7 @@
   flex-direction: column;
   background: #eee;
   align-items: center;
+  background-image: url('./../../static/img/sydney.jpg')
 }
 
 .timeContainer {
@@ -23,6 +24,7 @@
 
 .details {
   display: flex;
+  background-color: #34495e;
   width: $col5;
   justify-content: center;
 }
