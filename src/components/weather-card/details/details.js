@@ -3,8 +3,12 @@ import ConditionEntity from './../condition-entity/condition-entity'
 import Temperature from './../temperature/temperature'
 import Forecast from '../forecast/forecast'
 
-import { HumidityIcon, WindIcon, TemperatureIcon, PressureIcon } from './../../icons/icons'
 import ClearSkyDayIcon from './../../icons/clear-sky-day'
+import HumidityIcon from './../../icons/humidity'
+import WindIcon from './../../icons/wind'
+import TemperatureIcon from './../../icons/temperature'
+import PressureIcon from './../../icons/pressure'
+
 
 
 import styles from './details.module.scss'
@@ -24,19 +28,19 @@ const Details = () => (
     <hr className={styles.separator} />
     <div className={styles.conditionSection}>
       <ConditionEntity
-        iconComponent={<HumidityIcon size={25} />}
+        iconComponent={<HumidityIcon />}
         value='35%'
       />
       <ConditionEntity
-        iconComponent={<TemperatureIcon size={25} />}
+        iconComponent={<TemperatureIcon />}
         value={(<span>25&deg;</span>)}
       />
       <ConditionEntity
-        iconComponent={<WindIcon size={25} />}
+        iconComponent={<WindIcon />}
         value='7 m/s'
       />
       <ConditionEntity
-        iconComponent={<PressureIcon size={25} />}
+        iconComponent={<PressureIcon />}
         value='1012 hPa'
       />
     </div>

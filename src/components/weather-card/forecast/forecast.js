@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { CloudsManyIcon } from './../../icons/icons'
+import CloudsManyIcon from '../../icons/clouds-many'
 
 import styles from './forecast.module.scss'
 
 const Forecast = () => (
   <div className={styles.container}>
     <div className={styles.icon}>
-      <CloudsManyIcon size={25} />
+      <CloudsManyIcon />
     </div>
     <div className={styles.day}>
       <p>Thursday</p>
