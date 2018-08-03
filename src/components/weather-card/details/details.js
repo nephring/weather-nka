@@ -3,7 +3,9 @@ import ConditionEntity from './../condition-entity/condition-entity'
 import Temperature from './../temperature/temperature'
 import Forecast from '../forecast/forecast'
 
-import { ClearSkyDayIcon, HumidityIcon, WindIcon, TemperatureIcon, PressureIcon } from './../../icons/icons'
+import { HumidityIcon, WindIcon, TemperatureIcon, PressureIcon } from './../../icons/icons'
+import ClearSkyDayIcon from './../../icons/clear-sky-day'
+
 
 import styles from './details.module.scss'
 
@@ -13,7 +15,7 @@ const Details = () => (
       <div className={styles.temperatureWrapper}>
         <Temperature />
         <div className={styles.conditionIcon}>
-          <ClearSkyDayIcon size={40} />
+          <ClearSkyDayIcon />
         </div>
       </div>
       <span className={styles.conditionStatus}>Partly Cloudy</span>
