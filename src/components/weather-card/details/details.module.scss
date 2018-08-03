@@ -7,6 +7,12 @@
   flex-direction: column;
 }
 
+.forecast {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+}
+
 .conditionContainer {
   display: flex;
   flex-direction: column;

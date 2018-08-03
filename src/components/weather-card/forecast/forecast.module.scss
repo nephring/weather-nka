@@ -1,17 +1,16 @@
 .container {
   display: flex;
   align-items: center;
-  width: 280px;
   margin: 5px 0;
-  background-color: #2d4053;
+  background-color: rgba(35, 39, 63, .7);
+}
+
+.container div:last-child {
+  margin-left: auto;
 }
 
 .icon {
   margin: 0 7px;
-}
-
-.day {
-  margin-right: 35%;
 }
 
 .temps {

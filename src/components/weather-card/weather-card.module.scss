@@ -4,7 +4,6 @@
   display: flex;
   width: 700px;
   margin: 1%;
-  border: 1px solid black;
 }
 
 .main {
@@ -24,7 +23,7 @@
 
 .details {
   display: flex;
-  background-color: #34495e;
+  background-color: rgba(42, 47, 77, .8);
   width: $col5;
   justify-content: center;
 }

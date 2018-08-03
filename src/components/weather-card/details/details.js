@@ -19,7 +19,7 @@ const Details = () => (
       <div className={styles.temperatureWrapper}>
         <Temperature />
         <div className={styles.conditionIcon}>
-          <ClearSkyDayIcon />
+          <ClearSkyDayIcon size={40}/>
         </div>
       </div>
       <span className={styles.conditionStatus}>Partly Cloudy</span>
