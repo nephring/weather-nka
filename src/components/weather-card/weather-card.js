@@ -22,9 +22,6 @@ const WeatherCard = props => (
     </div>
     <div className={styles.details}>
       <Details />
-      {
-        //details here 
-      }
     </div>
   </div>
 )
