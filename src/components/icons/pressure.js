@@ -43,7 +43,7 @@ class PressureIcon extends React.Component {
 }
 
 PressureIcon.defaultProps = {
-  size: "25px",
+  size: "40px",
   fill: "#f8f8f8"
 }
 

@@ -19,7 +19,7 @@ const Details = () => (
       <div className={styles.temperatureWrapper}>
         <Temperature />
         <div className={styles.conditionIcon}>
-          {getConditionIcon(801, true)}
+          {getConditionIcon(800, true)}
         </div>
       </div>
       <span className={styles.conditionStatus}>Partly Cloudy</span>
@@ -28,19 +28,19 @@ const Details = () => (
     <hr className={styles.separator} />
     <div className={styles.conditionSection}>
       <ConditionEntity
-        iconComponent={<HumidityIcon />}
+        iconComponent={<HumidityIcon size={25}/>}
         value='35%'
       />
       <ConditionEntity
-        iconComponent={<TemperatureIcon />}
+        iconComponent={<TemperatureIcon size={25} />}
         value={(<span>25&deg;</span>)}
       />
       <ConditionEntity
-        iconComponent={<WindIcon />}
+        iconComponent={<WindIcon size={25} />}
         value='7 m/s'
       />
       <ConditionEntity
-        iconComponent={<PressureIcon />}
+        iconComponent={<PressureIcon size={25} />}
         value='1012 hPa'
       />
     </div>

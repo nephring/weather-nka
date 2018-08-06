@@ -48,7 +48,7 @@ class CloudsFewDayIcon extends React.Component {
 }
 
 CloudsFewDayIcon.defaultProps = {
-  size: "25px",
+  size: "40px",
   fill: "#f8f8f8"
 }
 

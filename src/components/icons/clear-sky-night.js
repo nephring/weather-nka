@@ -29,7 +29,7 @@ class ClearSkyNightIcon extends React.Component {
 }
 
 ClearSkyNightIcon.defaultProps = {
-  size: "25px",
+  size: "40px",
   fill: "#f8f8f8"
 }
 

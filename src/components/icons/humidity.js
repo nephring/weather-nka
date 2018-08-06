@@ -29,8 +29,8 @@ class HumidityIcon extends React.Component {
 }
 
 HumidityIcon.defaultProps = {
-  size: "25px",
-  height: "25px",
+  size: "40px",
+  height: "40px",
   fill: "#f8f8f8"
 }
 

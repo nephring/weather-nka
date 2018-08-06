@@ -46,7 +46,7 @@ class SnowIcon extends React.Component {
 }
 
 SnowIcon.defaultProps = {
-  size: "25px",
+  size: "40px",
   fill: "#f8f8f8"
 }
 

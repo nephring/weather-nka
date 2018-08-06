@@ -41,7 +41,7 @@ class RainIcon extends React.Component {
 }
 
 RainIcon.defaultProps = {
-  size: "25px",
+  size: "40px",
   fill: "#f8f8f8"
 }
 

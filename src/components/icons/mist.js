@@ -32,7 +32,7 @@ class MistIcon extends React.Component {
 }
 
 MistIcon.defaultProps = {
-  size: "25px",  
+  size: "40px",  
   fill: "#f8f8f8"
 }
 
