@@ -12,18 +12,18 @@ class DateTime extends React.Component {
 
   getTime = () => {
     return (
-      `${moment().tz('australia/sydney').format('HH')}:` +
-      `${moment().tz('australia/sydney').format('mm')}:` +
-      `${moment().tz('australia/sydney').format('ss')}`
+      `${moment().tz(`${this.props.country}/${this.props.city}`).format('HH')}:` +
+      `${moment().tz(`${this.props.country}/${this.props.city}`).format('mm')}:` +
+      `${moment().tz(`${this.props.country}/${this.props.city}`).format('ss')}`
     )
   }
 
   getDate = () => {
     return (
-      `${moment().tz('australia/sydney').format('dddd')}, ` +
-      `${moment().tz('australia/sydney').format('MMMM')} ` +
-      `${moment().tz('australia/sydney').format('D')}, ` +
-      `${moment().tz('australia/sydney').format('YYYY')}`
+      `${moment().tz(`${this.props.country}/${this.props.city}`).format('dddd')}, ` +
+      `${moment().tz(`${this.props.country}/${this.props.city}`).format('MMMM')} ` +
+      `${moment().tz(`${this.props.country}/${this.props.city}`).format('D')}, ` +
+      `${moment().tz(`${this.props.country}/${this.props.city}`).format('YYYY')}`
     )
   }
 

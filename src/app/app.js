@@ -3,14 +3,18 @@ import React from 'react'
 import WeatherCard from './../components/weather-card/weather-card'
 
 import styles from './app.module.scss'
-import sydneyIMG from './../static/img/sydney.jpg'
+import sydneyImg from './../static/img/sydney.jpg'
 
 const App = () => (
   <div className={styles.container}>
-    <WeatherCard cityImg={sydneyIMG}/>
-    <WeatherCard />
-    <WeatherCard />
-    <WeatherCard />
+    <WeatherCard
+      city="cracow"
+      country="poland"
+      cityImg={sydneyImg} />
+    <WeatherCard 
+      city="sydney"
+      country="australia"
+      cityImg={sydneyImg} />
   </div>
 )
 

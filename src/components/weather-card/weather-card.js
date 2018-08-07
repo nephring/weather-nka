@@ -10,14 +10,18 @@ const WeatherCard = props => (
   <div className={styles.card}>
     <div
       style={{ 
-        backgroundImage: props.cityImg,
+        background: `url(${props.cityImg})`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover' 
+        backgroundSize: 'cover',
       }}
       className={styles.main} >
-      <LocationName />
+      <LocationName 
+        city={props.city}
+        country={props.country}/>
       <div className={styles.timeContainer}>
-        <DateTime />
+        <DateTime 
+          city={props.city}
+          country={props.country}/>
       </div>
     </div>
     <div className={styles.details}>
