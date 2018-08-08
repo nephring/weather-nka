@@ -2,9 +2,9 @@ import React from 'react'
 
 import styles from './temperature.module.scss'
 
-const Temperature = () => (
+const Temperature = props => (
   <div className={styles.container}>
-    <p className={styles.temp}>20&deg;</p>
+    <p className={styles.temp}>{Math.floor(props.temp)}&deg;</p>
   </div>
 )
 
