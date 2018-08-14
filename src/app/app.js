@@ -7,11 +7,7 @@ import sydneyImg from './../static/img/sydney.jpg'
 
 const App = () => (
   <div className={styles.container}>
-    {/* <WeatherCard
-      city="cracow"
-      country="poland"
-      cityImg={sydneyImg} /> */}
-    <WeatherCard 
+    <WeatherCard
       city="sydney"
       country="australia"
       countryISO="AU"

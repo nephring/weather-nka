@@ -1,4 +1,7 @@
 import React from 'react'
+import moment from 'moment-timezone'
+import * as _ from 'lodash'
+
 import ConditionEntity from './../condition-entity/condition-entity'
 import Temperature from './../temperature/temperature'
 import Forecast from '../forecast/forecast'
@@ -13,8 +16,11 @@ import getConditionIcon from './../../icons/conditionIconGetter'
 
 import styles from './details.module.scss'
 
+const getFutureDay = (day, city, country) => {
+  return moment(new Date()).add(day, 'days').tz(`${country}/${city}`).format('dddd')
+}
+
 const Details = props => {
-  console.log(props.data.id)
   return (
     <div className={styles.container}>
       <div className={styles.conditionContainer}>
@@ -24,7 +30,7 @@ const Details = props => {
             {getConditionIcon(props.data.id, true)}
           </div>
         </div>
-        <span className={styles.conditionStatus}>{props.data.description}</span>
+        <span className={styles.conditionStatus}>{_.upperFirst(props.data.description)}</span>
       </div>
       <hr className={styles.separator} />
       <div className={styles.conditionSection}>
@@ -51,9 +57,15 @@ const Details = props => {
         />
       </div>
       <div className={styles.forecast}>
-        <Forecast data={props.data.forecastData.firstDay} />
-        <Forecast data={props.data.forecastData.secondDay} />
-        <Forecast data={props.data.forecastData.thirdDay} />
+        <Forecast
+          data={props.data.forecastData.firstDay}
+          day={getFutureDay(1, props.city, props.country)}/>
+        <Forecast
+          data={props.data.forecastData.secondDay}
+          day={getFutureDay(2, props.city, props.country)} />
+        <Forecast
+          data={props.data.forecastData.thirdDay}
+          day={getFutureDay(3, props.city, props.country)} />
       </div>
     </div>
   )
