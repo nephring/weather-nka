@@ -17,23 +17,62 @@ class WeatherCard extends React.Component {
     tempMax: undefined,
     pressure: undefined,
     humidity: undefined,
-    windSpeed: undefined
+    windSpeed: undefined,
+    forecastData: {
+      firstDay: {
+        id: undefined,
+        description: undefined,
+        tempMin: undefined,
+        tempMax: undefined
+      },
+      secondDay: {
+        id: undefined,
+        description: undefined,
+        tempMin: undefined,
+        tempMax: undefined
+      },
+      thirdDay: {
+        id: undefined,
+        description: undefined,
+        tempMin: undefined,
+        tempMax: undefined
+      }
+    }
   }
 
-  componentDidMount () {
-    getData(this.props.city, this.props.countryISO)
-      .then(data => {
-        this.setState({
-          id: data.weather[0].id,
-          description: data.weather[0].description,
-          temp: data.main.temp,
-          tempMin: data.main.temp_min,
-          tempMax: data.main.temp_max,
-          pressure: data.main.pressure,
-          humidity: data.main.humidity,
-          windSpeed: data.wind.speed
-        })
-      })
+  async componentDidMount () {
+    const weatherData = await getData(this.props.city, this.props.countryISO, "weather")
+    const forecastData = await getData(this.props.city, this.props.countryISO, "forecast")
+    this.setState({
+      id: weatherData.weather[0].id,
+      description: weatherData.weather[0].description,
+      temp: weatherData.main.temp,
+      tempMin: weatherData.main.temp_min,
+      tempMax: weatherData.main.temp_max,
+      pressure: weatherData.main.pressure,
+      humidity: weatherData.main.humidity,
+      windSpeed: weatherData.wind.speed,
+      forecastData: {
+        firstDay: {
+          id: forecastData.list[7].weather[0].id,
+          description: forecastData.list[7].weather[0].description,
+          tempMin: forecastData.list[7].main.temp_min,
+          tempMax: forecastData.list[7].main.temp_max
+        },
+        secondDay: {
+          id: forecastData.list[15].weather[0].id,
+          description: forecastData.list[15].weather[0].description,
+          tempMin: forecastData.list[15].main.temp_min,
+          tempMax: forecastData.list[15].main.temp_max
+        },
+        thirdDay: {
+          id: forecastData.list[23].weather[0].id,
+          description: forecastData.list[23].weather[0].description,
+          tempMin: forecastData.list[23].main.temp_min,
+          tempMax: forecastData.list[23].main.temp_max
+        }
+      }
+    })
   }
 
   render () {

@@ -14,13 +14,14 @@ import getConditionIcon from './../../icons/conditionIconGetter'
 import styles from './details.module.scss'
 
 const Details = props => {
+  console.log(props.data.id)
   return (
     <div className={styles.container}>
       <div className={styles.conditionContainer}>
         <div className={styles.temperatureWrapper}>
           <Temperature temp={props.data.temp} />
           <div className={styles.conditionIcon}>
-            {getConditionIcon(800, true)}
+            {getConditionIcon(props.data.id, true)}
           </div>
         </div>
         <span className={styles.conditionStatus}>{props.data.description}</span>
@@ -50,9 +51,9 @@ const Details = props => {
         />
       </div>
       <div className={styles.forecast}>
-        <Forecast />
-        <Forecast />
-        <Forecast />
+        <Forecast data={props.data.forecastData.firstDay} />
+        <Forecast data={props.data.forecastData.secondDay} />
+        <Forecast data={props.data.forecastData.thirdDay} />
       </div>
     </div>
   )
