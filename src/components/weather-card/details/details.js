@@ -17,11 +17,18 @@ import { isDay, getTime } from './../date-time/date-time'
 
 import styles from './details.module.scss'
 
-const getFutureDay = (day, city, country) => {
-  return moment(new Date()).add(day, 'days').tz(`${country}/${city}`).format('dddd')
+const getFutureDay = (day, timezone) => {
+  return moment(new Date()).add(day, 'days').tz(`${timezone}`).format('dddd')
 }
 
 class Details extends React.Component {
+
+  state = {
+    getFirstDay: getFutureDay(1, this.props.timezone),
+    getSecondDay: getFutureDay(2, this.props.timezone),
+    getThirdDay: getFutureDay(3, this.props.timezone),
+    isDay: isDay(getTime(this.props.timezone))
+  }
 
   render () {
     return (
@@ -61,17 +68,17 @@ class Details extends React.Component {
         </div>
         <div className={styles.forecast}>
           <Forecast
-            data={this.props.data.forecastData.thirdDay}
-            day={getFutureDay(1, this.props.city, this.props.country)}
-            isDay={isDay(getTime(this.props.timezone))} />
+            data={this.props.data.forecast.firstDay}
+            day={this.state.getFirstDay}
+            isDay={this.state.isDay} />
           <Forecast
-            data={this.props.data.forecastData.thirdDay}
-            day={getFutureDay(2, this.props.city, this.props.country)}
-            isDay={isDay(getTime(this.props.timezone))} />
+            data={this.props.data.forecast.secondDay}
+            day={this.state.getSecondDay}
+            isDay={this.state.isDay} />
           <Forecast
-            data={this.props.data.forecastData.thirdDay}
-            day={getFutureDay(3, this.props.city, this.props.country)}
-            isDay={isDay(getTime(this.props.timezone))} />
+            data={this.props.data.forecast.thirdDay}
+            day={this.state.getThirdDay}
+            isDay={this.state.isDay} />
         </div>
       </div>
     )

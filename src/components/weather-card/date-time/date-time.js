@@ -20,26 +20,29 @@ export const getTime = (timezone) => {
   )
 }
 
-export const isDay= (time) => {
+export const isDay = (time) => {
   return time > '05:00:00' && time < '21:00:00'
 }
 
 class DateTime extends React.Component {
 
-  constructor (props) {
-    super(props)
-    this.state = { date: moment() }
+  state = {
+    date: getDate(this.props.timezone),
+    time: getTime(this.props.timezone)
   }
 
   changeDate () {
-    this.setState({ date: moment() })
+    this.setState({
+      date: getDate(this.props.timezone),
+      time: getTime(this.props.timezone)
+    })
   }
 
   componentDidMount () {
     this.timer = setInterval(() => this.changeDate(), 1000)
   }
 
-  componentWillMount () {
+  componentWillUnmount () {
     clearInterval(this.timer)
   }
 
@@ -47,10 +50,10 @@ class DateTime extends React.Component {
     return (
       <div className={styles.container}>
         <p className={styles.time}>
-          {getTime(this.props.timezone)}
+          {this.state.time}
         </p>
         <p className={styles.date}>
-          {getDate(this.props.timezone)}
+          {this.state.date}
         </p>
       </div>
     )

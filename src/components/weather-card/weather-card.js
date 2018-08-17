@@ -18,7 +18,7 @@ class WeatherCard extends React.Component {
     pressure: undefined,
     humidity: undefined,
     windSpeed: undefined,
-    forecastData: {
+    forecast: {
       firstDay: {
         id: undefined,
         description: undefined,
@@ -40,7 +40,7 @@ class WeatherCard extends React.Component {
     }
   }
 
-  async componentDidMount () {
+  async updateData () {
     const weatherData = await getData(this.props.city, this.props.countryISO, "weather")
     const forecastData = await getData(this.props.city, this.props.countryISO, "forecast")
     this.setState({
@@ -52,27 +52,33 @@ class WeatherCard extends React.Component {
       pressure: weatherData.main.pressure,
       humidity: weatherData.main.humidity,
       windSpeed: weatherData.wind.speed,
-      forecastData: {
+      forecast: {
         firstDay: {
           id: forecastData.list[7].weather[0].id,
           description: forecastData.list[7].weather[0].description,
-          tempMin: forecastData.list[7].main.temp_min,
-          tempMax: forecastData.list[7].main.temp_max
+          temp: forecastData.list[7].main.temp
         },
         secondDay: {
           id: forecastData.list[15].weather[0].id,
           description: forecastData.list[15].weather[0].description,
-          tempMin: forecastData.list[15].main.temp_min,
-          tempMax: forecastData.list[15].main.temp_max
+          temp: forecastData.list[15].main.temp
         },
         thirdDay: {
           id: forecastData.list[23].weather[0].id,
           description: forecastData.list[23].weather[0].description,
-          tempMin: forecastData.list[23].main.temp_min,
-          tempMax: forecastData.list[23].main.temp_max
+          temp: forecastData.list[23].main.temp
         }
       }
     })
+  }
+
+  async componentDidMount () {
+    this.updateData()
+    this.timer = setInterval(() => this.updateData(), 300000)
+  }
+
+  async componentWillUnmount () {
+    clearInterval(this.timer)
   }
 
   render () {
@@ -95,8 +101,6 @@ class WeatherCard extends React.Component {
         <div className={styles.details}>
           <Details
             data={this.state}
-            city={this.props.city}
-            country={this.props.country}
             timezone={this.props.timezone} />
         </div>
       </div>
