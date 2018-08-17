@@ -12,18 +12,18 @@ class DateTime extends React.Component {
 
   getTime = () => {
     return (
-      `${moment().tz(`${this.props.country}/${this.props.city}`).format('HH')}:` +
-      `${moment().tz(`${this.props.country}/${this.props.city}`).format('mm')}:` +
-      `${moment().tz(`${this.props.country}/${this.props.city}`).format('ss')}`
+      `${moment().tz(`${this.props.timezone}`).format('HH')}:` +
+      `${moment().tz(`${this.props.timezone}`).format('mm')}:` +
+      `${moment().tz(`${this.props.timezone}`).format('ss')}`
     )
   }
 
   getDate = () => {
     return (
-      `${moment().tz(`${this.props.country}/${this.props.city}`).format('dddd')}, ` +
-      `${moment().tz(`${this.props.country}/${this.props.city}`).format('MMMM')} ` +
-      `${moment().tz(`${this.props.country}/${this.props.city}`).format('D')}, ` +
-      `${moment().tz(`${this.props.country}/${this.props.city}`).format('YYYY')}`
+      `${moment().tz(`${this.props.timezone}`).format('dddd')}, ` +
+      `${moment().tz(`${this.props.timezone}`).format('MMMM')} ` +
+      `${moment().tz(`${this.props.timezone}`).format('D')}, ` +
+      `${moment().tz(`${this.props.timezone}`).format('YYYY')}`
     )
   }
 

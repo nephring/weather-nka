@@ -89,9 +89,7 @@ class WeatherCard extends React.Component {
             city={this.props.city}
             country={this.props.country} />
           <div className={styles.timeContainer}>
-            <DateTime
-              city={this.props.city}
-              country={this.props.country} />
+            <DateTime timezone={this.props.timezone} />
           </div>
         </div>
         <div className={styles.details}>
