@@ -37,39 +37,50 @@ class WeatherCard extends React.Component {
         tempMin: undefined,
         tempMax: undefined
       }
-    }
+    },
+    loading: true,
+    error: false
   }
 
   async updateData () {
     const weatherData = await getData(this.props.city, this.props.countryISO, "weather")
     const forecastData = await getData(this.props.city, this.props.countryISO, "forecast")
-    this.setState({
-      id: weatherData.weather[0].id,
-      description: weatherData.weather[0].description,
-      temp: weatherData.main.temp,
-      tempMin: weatherData.main.temp_min,
-      tempMax: weatherData.main.temp_max,
-      pressure: weatherData.main.pressure,
-      humidity: weatherData.main.humidity,
-      windSpeed: weatherData.wind.speed,
-      forecast: {
-        firstDay: {
-          id: forecastData.list[7].weather[0].id,
-          description: forecastData.list[7].weather[0].description,
-          temp: forecastData.list[7].main.temp
+
+    try {
+      this.setState({
+        id: weatherData.weather[0].id,
+        description: weatherData.weather[0].description,
+        temp: weatherData.main.temp,
+        tempMin: weatherData.main.temp_min,
+        tempMax: weatherData.main.temp_max,
+        pressure: weatherData.main.pressure,
+        humidity: weatherData.main.humidity,
+        windSpeed: weatherData.wind.speed,
+        forecast: {
+          firstDay: {
+            id: forecastData.list[7].weather[0].id,
+            description: forecastData.list[7].weather[0].description,
+            temp: forecastData.list[7].main.temp
+          },
+          secondDay: {
+            id: forecastData.list[15].weather[0].id,
+            description: forecastData.list[15].weather[0].description,
+            temp: forecastData.list[15].main.temp
+          },
+          thirdDay: {
+            id: forecastData.list[23].weather[0].id,
+            description: forecastData.list[23].weather[0].description,
+            temp: forecastData.list[23].main.temp
+          }
         },
-        secondDay: {
-          id: forecastData.list[15].weather[0].id,
-          description: forecastData.list[15].weather[0].description,
-          temp: forecastData.list[15].main.temp
-        },
-        thirdDay: {
-          id: forecastData.list[23].weather[0].id,
-          description: forecastData.list[23].weather[0].description,
-          temp: forecastData.list[23].main.temp
-        }
-      }
-    })
+        loading: false
+      })
+    } catch (e) {
+      this.setState({
+        error: true,
+        loading: false
+      })
+    }
   }
 
   async componentDidMount () {
@@ -83,26 +94,41 @@ class WeatherCard extends React.Component {
 
   render () {
     return (
-      <div className={styles.card}>
-        <div
-          style={{
-            background: `url(${this.props.cityImg})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover'
-          }}
-          className={styles.main} >
-          <LocationName
-            city={this.props.city}
-            country={this.props.country} />
-          <div className={styles.timeContainer}>
-            <DateTime timezone={this.props.timezone} />
+      <div className={styles.container}>
+        {this.state.loading
+          ?
+          <div className={styles.spinner}></div>
+          :
+          <div>
+            {this.state.error
+              ? <div className={styles.cardError}>
+                <p>There has been problem to get data for this card</p>
+              </div>
+
+              : <div className={styles.card}>
+                <div
+                  style={{
+                    background: `url(${this.props.cityImg})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover'
+                  }}
+                  className={styles.main} >
+                  <LocationName
+                    city={this.props.city}
+                    country={this.props.country} />
+                  <div className={styles.timeContainer}>
+                    <DateTime timezone={this.props.timezone} />
+                  </div>
+                </div>
+                <div className={styles.details}>
+                  <Details
+                    data={this.state}
+                    timezone={this.props.timezone} />
+                </div>
+              </div>
+            }
           </div>
-        </div>
-        <div className={styles.details}>
-          <Details
-            data={this.state}
-            timezone={this.props.timezone} />
-        </div>
+        }
       </div>
     )
   }
