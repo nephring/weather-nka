@@ -3,28 +3,32 @@ import moment from 'moment-timezone'
 
 import styles from './date-time.module.scss'
 
+const getDate = (timezone) => {
+  return (
+    `${moment().tz(`${timezone}`).format('dddd')}, ` +
+    `${moment().tz(`${timezone}`).format('MMMM')} ` +
+    `${moment().tz(`${timezone}`).format('D')}, ` +
+    `${moment().tz(`${timezone}`).format('YYYY')}`
+  )
+}
+
+export const getTime = (timezone) => {
+  return (
+    `${moment().tz(`${timezone}`).format('HH')}:` +
+    `${moment().tz(`${timezone}`).format('mm')}:` +
+    `${moment().tz(`${timezone}`).format('ss')}`
+  )
+}
+
+export const isDay= (time) => {
+  return time > '05:00:00' && time < '21:00:00'
+}
+
 class DateTime extends React.Component {
 
   constructor (props) {
     super(props)
     this.state = { date: moment() }
-  }
-
-  getTime = () => {
-    return (
-      `${moment().tz(`${this.props.timezone}`).format('HH')}:` +
-      `${moment().tz(`${this.props.timezone}`).format('mm')}:` +
-      `${moment().tz(`${this.props.timezone}`).format('ss')}`
-    )
-  }
-
-  getDate = () => {
-    return (
-      `${moment().tz(`${this.props.timezone}`).format('dddd')}, ` +
-      `${moment().tz(`${this.props.timezone}`).format('MMMM')} ` +
-      `${moment().tz(`${this.props.timezone}`).format('D')}, ` +
-      `${moment().tz(`${this.props.timezone}`).format('YYYY')}`
-    )
   }
 
   changeDate () {
@@ -43,10 +47,10 @@ class DateTime extends React.Component {
     return (
       <div className={styles.container}>
         <p className={styles.time}>
-          {this.getTime()}
+          {getTime(this.props.timezone)}
         </p>
         <p className={styles.date}>
-          {this.getDate()}
+          {getDate(this.props.timezone)}
         </p>
       </div>
     )

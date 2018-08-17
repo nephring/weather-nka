@@ -7,7 +7,7 @@ import styles from './forecast.module.scss'
 const Forecast = props => (
   <div className={styles.container}>
     <div className={styles.icon}>
-      {getConditionIcon(props.data.id, true)}
+      {getConditionIcon(props.data.id, props.isDay)}
     </div>
     <div className={styles.day}>
       <p>{props.day}</p>

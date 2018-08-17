@@ -93,10 +93,11 @@ class WeatherCard extends React.Component {
           </div>
         </div>
         <div className={styles.details}>
-          <Details 
-            data={this.state} 
+          <Details
+            data={this.state}
             city={this.props.city}
-            country={this.props.country} />
+            country={this.props.country}
+            timezone={this.props.timezone} />
         </div>
       </div>
     )

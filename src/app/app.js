@@ -38,8 +38,6 @@ const App = () => (
       countryISO="at"
       timezone="europe/vienna"
       cityImg={viennaImg} />
-
-
   </div>
 )
 
