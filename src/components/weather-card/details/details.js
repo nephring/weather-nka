@@ -31,52 +31,65 @@ class Details extends React.Component {
   }
 
   render () {
+    const {
+      temp,
+      id,
+      description,
+      humidity,
+      tempMin,
+      tempMax,
+      windSpeed,
+      pressure,
+      forecast } = this.props.data
+    const { timezone } = this.props
+
+
     return (
       <div className={styles.container}>
         <div className={styles.conditionContainer}>
           <div className={styles.temperatureWrapper}>
-            <Temperature temp={this.props.data.temp} />
+            <Temperature temp={temp} />
             <div className={styles.conditionIcon}>
-              {getConditionIcon(this.props.data.id, isDay(getTime(this.props.timezone)))}
+              {getConditionIcon(id, isDay(getTime(timezone)))}
             </div>
           </div>
-          <span className={styles.conditionStatus}>{_.upperFirst(this.props.data.description)}</span>
+          <span className={styles.conditionStatus}>{_.upperFirst(description)}</span>
         </div>
         <hr className={styles.separator} />
         <div className={styles.conditionSection}>
           <ConditionEntity
             iconComponent={<HumidityIcon size={25} />}
-            value={`${this.props.data.humidity}%`}
+            value={`${humidity}%`}
           />
           <ConditionEntity
             iconComponent={<TemperatureIcon size={25} />}
             value={
               <div className={styles.temps}>
-                <span>{this.props.data.tempMin}&deg;</span>
-                <span className={styles.maxTemp}>{this.props.data.tempMax}&deg;</span>
+                <span>{tempMin.toFixed(0)}&deg;</span>
+                <span className={styles.maxTemp}>{tempMax.toFixed(0)}&deg;</span>
               </div>
             }
           />
           <ConditionEntity
             iconComponent={<WindIcon size={25} />}
-            value={`${this.props.data.windSpeed}m/s`}
+            value={`${windSpeed}m/s`}
           />
           <ConditionEntity
             iconComponent={<PressureIcon size={25} />}
-            value={`${this.props.data.pressure}hPa`}
+            value={`${pressure}hPa`}
           />
         </div>
         <div className={styles.forecast}>
           <Forecast
-            data={this.props.data.forecast.firstDay}
+            data={forecast.firstDay}
             day={this.state.getFirstDay}
             isDay={this.state.isDay} />
           <Forecast
-            data={this.props.data.forecast.secondDay}
+            data={forecast.secondDay}
             day={this.state.getSecondDay}
             isDay={this.state.isDay} />
           <Forecast
-            data={this.props.data.forecast.thirdDay}
+            data={forecast.thirdDay}
             day={this.state.getThirdDay}
             isDay={this.state.isDay} />
         </div>
