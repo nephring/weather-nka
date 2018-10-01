@@ -7,6 +7,9 @@
     "prettier",
     "prettier/react"
   ],
+  "rules": {
+    "space-before-function-paren": ["error", "always"]
+  },
   "plugins": ["react", "import", "jsx-a11y"],
   "parserOptions": {
     "ecmaVersion": 2018,

@@ -16,7 +16,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{js,jsx,css,json}\" ",
-    "lint": "eslint \"src/**/*.{js,jsx}\""
+    "lint": "eslint --fix \"src/**/*.{js,jsx}\""
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
