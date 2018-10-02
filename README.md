@@ -3,6 +3,9 @@
 This application displays the current weather and time based on the given city, country and timezone.
 ![](giphy.gif)
 
+Also the application is fully responsive.
+![](giphy-responsive.gif)
+
 Application was generated with create-react-app.
 
 ## Setup
