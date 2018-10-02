@@ -1,1 +1,0 @@
-// Weather condition name with icon
