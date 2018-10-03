@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 import getConditionIcon from "./../../icons/conditionIconGetter"
 
@@ -23,6 +24,15 @@ class Forecast extends React.Component {
       </div>
     )
   }
+}
+
+Forecast.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.number,
+    temp: PropTypes.number
+  }),
+  isDay: PropTypes.bool,
+  day: PropTypes.string
 }
 
 export default Forecast

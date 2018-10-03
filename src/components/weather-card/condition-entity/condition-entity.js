@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 import styles from "./condition-entity.module.scss"
 
@@ -8,5 +9,10 @@ const ConditionEntity = props => (
     <span>{props.value}</span>
   </div>
 )
+
+ConditionEntity.propTypes = {
+  iconComponent: PropTypes.node,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+}
 
 export default ConditionEntity

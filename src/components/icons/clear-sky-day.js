@@ -1,7 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 class ClearSkyDayIcon extends React.Component {
   render () {
+    const { fill, size } = this.props
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -9,9 +11,9 @@ class ClearSkyDayIcon extends React.Component {
           x="0px"
           y="0px"
           viewBox="0 0 219.786 219.786"
-          fill={this.props.fill}
-          width={this.props.size}
-          height={this.props.size}
+          fill={fill}
+          width={size}
+          height={size}
         >
           <g>
             <path
@@ -64,6 +66,11 @@ class ClearSkyDayIcon extends React.Component {
 ClearSkyDayIcon.defaultProps = {
   size: "40px",
   fill: "#f8f8f8"
+}
+
+ClearSkyDayIcon.propTypes = {
+  fill: PropTypes.string,
+  size: PropTypes.string
 }
 
 export default ClearSkyDayIcon

@@ -1,7 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 class HumidityIcon extends React.Component {
-  render () {
+  render() {
+    const { fill, size } = this.props
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -9,9 +11,9 @@ class HumidityIcon extends React.Component {
           x="0px"
           y="0px"
           viewBox="0 0 190.391 190.391"
-          fill={this.props.fill}
-          width={this.props.size}
-          height={this.props.size}
+          fill={fill}
+          width={size}
+          height={size}
         >
           <path
             d="M178.203,113.471c0-21.885-34.001-71.735-37.878-77.348c-1.4-2.027-3.707-3.237-6.172-3.237
@@ -34,6 +36,11 @@ HumidityIcon.defaultProps = {
   size: "40px",
   height: "40px",
   fill: "#f8f8f8"
+}
+
+HumidityIcon.propTypes = {
+  size: PropTypes.string,
+  fill: PropTypes.string
 }
 
 export default HumidityIcon

@@ -1,7 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 class ThunderstormIcon extends React.Component {
-  render () {
+  render() {
+    const { fill, size } = this.props
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -9,9 +11,9 @@ class ThunderstormIcon extends React.Component {
           x="0px"
           y="0px"
           viewBox="0 0 190.391 190.391"
-          fill={this.props.fill}
-          width={this.props.size}
-          height={this.props.size}
+          fill={fill}
+          width={size}
+          height={size}
         >
           <path
             d="M171.354,70.433c-1.233-2.638-3.882-4.324-6.794-4.324h-49.832l31.245-54.899c1.321-2.322,1.308-5.171-0.035-7.48
@@ -30,6 +32,11 @@ class ThunderstormIcon extends React.Component {
 ThunderstormIcon.defaultProps = {
   size: "40px",
   fill: "#f8f8f8"
+}
+
+ThunderstormIcon.propTypes = {
+  size: PropTypes.string,
+  fill: PropTypes.string
 }
 
 export default ThunderstormIcon

@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 import styles from "./temperature.module.scss"
 
@@ -10,5 +11,9 @@ const Temperature = props => (
     </p>
   </div>
 )
+
+Temperature.propTypes = {
+  temp: PropTypes.number
+}
 
 export default Temperature

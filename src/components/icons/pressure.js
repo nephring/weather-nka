@@ -1,7 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 class PressureIcon extends React.Component {
-  render () {
+  render() {
+    const { fill, size } = this.props
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -9,9 +11,9 @@ class PressureIcon extends React.Component {
           x="0px"
           y="0px"
           viewBox="0 0 191.85 191.85"
-          fill={this.props.fill}
-          width={this.props.size}
-          height={this.props.size}
+          fill={fill}
+          width={size}
+          height={size}
         >
           <g>
             <path
@@ -51,6 +53,11 @@ class PressureIcon extends React.Component {
 PressureIcon.defaultProps = {
   size: "40px",
   fill: "#f8f8f8"
+}
+
+PressureIcon.propTypes = {
+  size: PropTypes.string,
+  fill: PropTypes.string
 }
 
 export default PressureIcon

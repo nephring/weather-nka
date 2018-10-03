@@ -1,5 +1,6 @@
 import React from "react"
 import moment from "moment-timezone"
+import PropTypes from "prop-types"
 
 import styles from "./date-time.module.scss"
 
@@ -67,6 +68,10 @@ class DateTime extends React.Component {
       </div>
     )
   }
+}
+
+DateTime.propTypes = {
+  timezone: PropTypes.string
 }
 
 export default DateTime

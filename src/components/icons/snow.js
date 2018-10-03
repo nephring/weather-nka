@@ -1,7 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 class SnowIcon extends React.Component {
-  render () {
+  render() {
+    const { fill, size } = this.props
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -9,9 +11,9 @@ class SnowIcon extends React.Component {
           x="0px"
           y="0px"
           viewBox="0 0 227.73 227.73"
-          fill={this.props.fill}
-          width={this.props.size}
-          height={this.props.size}
+          fill={fill}
+          width={size}
+          height={size}
         >
           <g>
             <path
@@ -56,6 +58,11 @@ class SnowIcon extends React.Component {
 SnowIcon.defaultProps = {
   size: "40px",
   fill: "#f8f8f8"
+}
+
+SnowIcon.propTypes = {
+  size: PropTypes.string,
+  fill: PropTypes.string
 }
 
 export default SnowIcon

@@ -1,7 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 class TemperatureIcon extends React.Component {
-  render () {
+  render() {
+    const { fill, size } = this.props
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -9,9 +11,9 @@ class TemperatureIcon extends React.Component {
           x="0px"
           y="0px"
           viewBox="0 0 180.146 180.146"
-          fill={this.props.fill}
-          width={this.props.size}
-          height={this.props.size}
+          fill={fill}
+          width={size}
+          height={size}
         >
           <path
             d="M116.707,104.542V26.631C116.707,11.946,104.758,0,90.07,0C75.386,0,63.438,11.946,63.438,26.631v77.911
@@ -30,6 +32,11 @@ class TemperatureIcon extends React.Component {
 TemperatureIcon.defaultProps = {
   size: "40px",
   fill: "#f8f8f8"
+}
+
+TemperatureIcon.propTypes = {
+  size: PropTypes.string,
+  fill: PropTypes.string
 }
 
 export default TemperatureIcon

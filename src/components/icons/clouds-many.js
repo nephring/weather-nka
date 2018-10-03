@@ -1,7 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 class CloudsManyIcon extends React.Component {
-  render () {
+  render() {
+    const { fill, size } = this.props
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -9,9 +11,9 @@ class CloudsManyIcon extends React.Component {
           x="0px"
           y="0px"
           viewBox="0 0 249.002 249.002"
-          fill={this.props.fill}
-          width={this.props.size}
-          height={this.props.size}
+          fill={fill}
+          width={size}
+          height={size}
         >
           <path
             d="M185.496,83.545c-1.475,0-2.952,0.051-4.425,0.151c-4.725-11.404-12.63-21.543-22.705-28.993
@@ -32,6 +34,11 @@ class CloudsManyIcon extends React.Component {
 CloudsManyIcon.defaultProps = {
   size: "40px",
   fill: "#f8f8f8"
+}
+
+CloudsManyIcon.propTypes = {
+  size: PropTypes.string,
+  fill: PropTypes.string
 }
 
 export default CloudsManyIcon

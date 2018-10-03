@@ -1,7 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 class ClearSkyNightIcon extends React.Component {
   render () {
+    const { fill, size } = this.props
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -9,9 +11,9 @@ class ClearSkyNightIcon extends React.Component {
           x="0px"
           y="0px"
           viewBox="0 0 168.29 168.29"
-          fill={this.props.fill}
-          width={this.props.size}
-          height={this.props.size}
+          fill={fill}
+          width={size}
+          height={size}
         >
           <path
             d="M159.81,127.909c-1.025-2.473-3.289-4.212-5.942-4.565c-24.423-3.241-45.44-19.364-54.848-42.078
@@ -33,6 +35,11 @@ class ClearSkyNightIcon extends React.Component {
 ClearSkyNightIcon.defaultProps = {
   size: "40px",
   fill: "#f8f8f8"
+}
+
+ClearSkyNightIcon.propTypes = {
+  fill: PropTypes.string,
+  size: PropTypes.string
 }
 
 export default ClearSkyNightIcon

@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import moment from "moment-timezone"
 import * as _ from "lodash"
 
@@ -61,11 +62,11 @@ class Details extends React.Component {
         <hr className={styles.separator} />
         <div className={styles.conditionSection}>
           <ConditionEntity
-            iconComponent={<HumidityIcon size={25} />}
+            iconComponent={<HumidityIcon size={"25"} />}
             value={`${humidity}%`}
           />
           <ConditionEntity
-            iconComponent={<TemperatureIcon size={25} />}
+            iconComponent={<TemperatureIcon size={"25"} />}
             value={
               <div className={styles.temps}>
                 <span>
@@ -80,11 +81,11 @@ class Details extends React.Component {
             }
           />
           <ConditionEntity
-            iconComponent={<WindIcon size={25} />}
+            iconComponent={<WindIcon size={"25"} />}
             value={`${windSpeed}m/s`}
           />
           <ConditionEntity
-            iconComponent={<PressureIcon size={25} />}
+            iconComponent={<PressureIcon size={"25"} />}
             value={`${pressure}hPa`}
           />
         </div>
@@ -108,6 +109,21 @@ class Details extends React.Component {
       </div>
     )
   }
+}
+
+Details.propTypes = {
+  timezone: PropTypes.string,
+  data: PropTypes.shape({
+    temp: PropTypes.number,
+    id: PropTypes.number,
+    description: PropTypes.string,
+    humidity: PropTypes.number,
+    tempMin: PropTypes.number,
+    tempMax: PropTypes.number,
+    windSpeed: PropTypes.number,
+    pressure: PropTypes.number,
+    forecast: PropTypes.object
+  })
 }
 
 export default Details

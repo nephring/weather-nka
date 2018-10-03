@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import getData from "../../api"
 
 import LocationName from "./location-name/location-name"
@@ -138,6 +139,14 @@ class WeatherCard extends React.Component {
       </div>
     )
   }
+}
+
+WeatherCard.propTypes = {
+  country: PropTypes.string,
+  city: PropTypes.string,
+  countryISO: PropTypes.string,
+  cityImg: PropTypes.string,
+  timezone: PropTypes.string
 }
 
 export default WeatherCard
