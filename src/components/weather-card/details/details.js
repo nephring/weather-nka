@@ -1,28 +1,29 @@
-import React from 'react'
-import moment from 'moment-timezone'
-import * as _ from 'lodash'
+import React from "react"
+import moment from "moment-timezone"
+import * as _ from "lodash"
 
-import ConditionEntity from './../condition-entity/condition-entity'
-import Temperature from './../temperature/temperature'
-import Forecast from '../forecast/forecast'
+import ConditionEntity from "./../condition-entity/condition-entity"
+import Temperature from "./../temperature/temperature"
+import Forecast from "../forecast/forecast"
 
-import HumidityIcon from './../../icons/humidity'
-import WindIcon from './../../icons/wind'
-import TemperatureIcon from './../../icons/temperature'
-import PressureIcon from './../../icons/pressure'
+import HumidityIcon from "./../../icons/humidity"
+import WindIcon from "./../../icons/wind"
+import TemperatureIcon from "./../../icons/temperature"
+import PressureIcon from "./../../icons/pressure"
 
-import getConditionIcon from './../../icons/conditionIconGetter'
-import { isDay, getTime } from './../date-time/date-time'
+import getConditionIcon from "./../../icons/conditionIconGetter"
+import { isDay, getTime } from "./../date-time/date-time"
 
-
-import styles from './details.module.scss'
+import styles from "./details.module.scss"
 
 const getFutureDay = (day, timezone) => {
-  return moment(new Date()).add(day, 'days').tz(`${timezone}`).format('dddd')
+  return moment(new Date())
+    .add(day, "days")
+    .tz(`${timezone}`)
+    .format("dddd")
 }
 
 class Details extends React.Component {
-
   state = {
     getFirstDay: getFutureDay(1, this.props.timezone),
     getSecondDay: getFutureDay(2, this.props.timezone),
@@ -40,9 +41,9 @@ class Details extends React.Component {
       tempMax,
       windSpeed,
       pressure,
-      forecast } = this.props.data
+      forecast
+    } = this.props.data
     const { timezone } = this.props
-
 
     return (
       <div className={styles.container}>
@@ -53,7 +54,9 @@ class Details extends React.Component {
               {getConditionIcon(id, isDay(getTime(timezone)))}
             </div>
           </div>
-          <span className={styles.conditionStatus}>{_.upperFirst(description)}</span>
+          <span className={styles.conditionStatus}>
+            {_.upperFirst(description)}
+          </span>
         </div>
         <hr className={styles.separator} />
         <div className={styles.conditionSection}>
@@ -65,8 +68,14 @@ class Details extends React.Component {
             iconComponent={<TemperatureIcon size={25} />}
             value={
               <div className={styles.temps}>
-                <span>{tempMin.toFixed(0)}&deg;</span>
-                <span className={styles.maxTemp}>{tempMax.toFixed(0)}&deg;</span>
+                <span>
+                  {tempMin.toFixed(0)}
+                  &deg;
+                </span>
+                <span className={styles.maxTemp}>
+                  {tempMax.toFixed(0)}
+                  &deg;
+                </span>
               </div>
             }
           />
@@ -83,15 +92,18 @@ class Details extends React.Component {
           <Forecast
             data={forecast.firstDay}
             day={this.state.getFirstDay}
-            isDay={this.state.isDay} />
+            isDay={this.state.isDay}
+          />
           <Forecast
             data={forecast.secondDay}
             day={this.state.getSecondDay}
-            isDay={this.state.isDay} />
+            isDay={this.state.isDay}
+          />
           <Forecast
             data={forecast.thirdDay}
             day={this.state.getThirdDay}
-            isDay={this.state.isDay} />
+            isDay={this.state.isDay}
+          />
         </div>
       </div>
     )

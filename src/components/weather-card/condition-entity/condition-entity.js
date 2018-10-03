@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 
-import styles from './condition-entity.module.scss'
+import styles from "./condition-entity.module.scss"
 
 const ConditionEntity = props => (
   <div className={styles.conditionEntity}>
