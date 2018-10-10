@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import styles from "./temperature.module.scss"
+import styles from "./temperature.scss";
 
 const Temperature = props => (
   <div className={styles.container}>
@@ -10,10 +10,10 @@ const Temperature = props => (
       &deg;
     </p>
   </div>
-)
+);
 
 Temperature.propTypes = {
   temp: PropTypes.number
-}
+};
 
-export default Temperature
+export default Temperature;

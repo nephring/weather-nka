@@ -4,13 +4,11 @@ This application displays the current weather and time based on the given city, 
 
 **Wide screen**
 
-![wide gif](giphy.gif)
+![wide gif](static/giphy.gif)
 
 **Responsive screen**
 
-![responsive gif](giphy-responsive.gif)
-
-Application was generated with create-react-app.
+![responsive gif](static/giphy-responsive.gif)
 
 ## Setup
 
@@ -39,10 +37,10 @@ npm install
 > then run the application
 
 ```
-npm start
+npm run dev
 ```
 
-The application will be automatically navigated to http://localhost:3000.
+The application will be automatically navigated to http://localhost:1234.
 
 ### Prettier & ESlint
 
@@ -56,3 +54,4 @@ npm run lint
 ## Built With
 
 - [React](https://reactjs.org/) - JavaScript library
+- [Parcel](https://parceljs.org/) - Web app bundler

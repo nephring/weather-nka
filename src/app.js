@@ -1,13 +1,14 @@
-import React from "react"
+import React from "react";
+import ReactDOM from "react-dom";
 
-import WeatherCard from "./../components/weather-card/weather-card"
+import WeatherCard from "./components/weather-card/weather-card";
 
-import styles from "./app.module.scss"
+import styles from "./app.scss";
 
-import sydneyImg from "./../static/img/sydney.jpg"
-import krkImg from "./../static/img/krk.jpg"
-import nyImg from "./../static/img/ny.jpg"
-import viennaImg from "./../static/img/vienna.jpg"
+import sydneyImg from "./static/img/sydney.jpg";
+import krkImg from "./static/img/krk.jpg";
+import nyImg from "./static/img/ny.jpg";
+import viennaImg from "./static/img/vienna.jpg";
 
 const App = () => (
   <div className={styles.container}>
@@ -43,6 +44,6 @@ const App = () => (
       cityImg={viennaImg}
     />
   </div>
-)
+);
 
-export default App
+ReactDOM.render(<App />, document.getElementById("root"));

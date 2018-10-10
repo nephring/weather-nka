@@ -1,38 +1,40 @@
-import React from "react"
-import PropTypes from "prop-types"
-import moment from "moment-timezone"
-import * as _ from "lodash"
+import React from "react";
+import PropTypes from "prop-types";
+import moment from "moment-timezone";
+import * as _ from "lodash";
 
-import ConditionEntity from "./../condition-entity/condition-entity"
-import Temperature from "./../temperature/temperature"
-import Forecast from "../forecast/forecast"
+import ConditionEntity from "./../condition-entity/condition-entity";
+import Temperature from "./../temperature/temperature";
+import Forecast from "../forecast/forecast";
 
-import HumidityIcon from "./../../icons/humidity"
-import WindIcon from "./../../icons/wind"
-import TemperatureIcon from "./../../icons/temperature"
-import PressureIcon from "./../../icons/pressure"
+import HumidityIcon from "./../../icons/humidity";
+import WindIcon from "./../../icons/wind";
+import TemperatureIcon from "./../../icons/temperature";
+import PressureIcon from "./../../icons/pressure";
 
-import getConditionIcon from "./../../icons/conditionIconGetter"
-import { isDay, getTime } from "./../date-time/date-time"
+import getConditionIcon from "./../../icons/conditionIconGetter";
+import { isDay, getTime } from "./../date-time/date-time";
 
-import styles from "./details.module.scss"
+import styles from "./details.scss";
 
 const getFutureDay = (day, timezone) => {
   return moment(new Date())
     .add(day, "days")
     .tz(`${timezone}`)
-    .format("dddd")
-}
+    .format("dddd");
+};
 
 class Details extends React.Component {
-  state = {
-    getFirstDay: getFutureDay(1, this.props.timezone),
-    getSecondDay: getFutureDay(2, this.props.timezone),
-    getThirdDay: getFutureDay(3, this.props.timezone),
-    isDay: isDay(getTime(this.props.timezone))
+  constructor(props) {
+    super(props);
+    this.state = {
+      getFirstDay: getFutureDay(1, this.props.timezone),
+      getSecondDay: getFutureDay(2, this.props.timezone),
+      getThirdDay: getFutureDay(3, this.props.timezone),
+      isDay: isDay(getTime(this.props.timezone))
+    };
   }
-
-  render () {
+  render() {
     const {
       temp,
       id,
@@ -43,8 +45,8 @@ class Details extends React.Component {
       windSpeed,
       pressure,
       forecast
-    } = this.props.data
-    const { timezone } = this.props
+    } = this.props.data;
+    const { timezone } = this.props;
 
     return (
       <div className={styles.container}>
@@ -107,7 +109,7 @@ class Details extends React.Component {
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -124,6 +126,6 @@ Details.propTypes = {
     pressure: PropTypes.number,
     forecast: PropTypes.object
   })
-}
+};
 
-export default Details
+export default Details;

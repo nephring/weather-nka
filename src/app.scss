@@ -1,11 +1,12 @@
-@import './web-fonts.scss';
+@import "./web-fonts.scss";
 
-html, body {
+html,
+body {
   margin: 0;
-  background: url('../static/img/background.jpg');
+  background: url("./static/img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #f8f8f8;
 }
 

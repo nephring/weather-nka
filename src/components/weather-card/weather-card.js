@@ -1,58 +1,61 @@
-import React from "react"
-import PropTypes from "prop-types"
-import getData from "../../api"
+import React from "react";
+import PropTypes from "prop-types";
+import getData from "../../api";
 
-import LocationName from "./location-name/location-name"
-import DateTime from "./date-time/date-time"
-import Details from "./details/details"
+import LocationName from "./location-name/location-name";
+import DateTime from "./date-time/date-time";
+import Details from "./details/details";
 
-import styles from "./weather-card.module.scss"
+import styles from "./weather-card.scss";
 
 class WeatherCard extends React.Component {
-  state = {
-    id: undefined,
-    description: undefined,
-    temp: undefined,
-    tempMin: undefined,
-    tempMax: undefined,
-    pressure: undefined,
-    humidity: undefined,
-    windSpeed: undefined,
-    forecast: {
-      firstDay: {
-        id: undefined,
-        description: undefined,
-        tempMin: undefined,
-        tempMax: undefined
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: undefined,
+      description: undefined,
+      temp: undefined,
+      tempMin: undefined,
+      tempMax: undefined,
+      pressure: undefined,
+      humidity: undefined,
+      windSpeed: undefined,
+      forecast: {
+        firstDay: {
+          id: undefined,
+          description: undefined,
+          tempMin: undefined,
+          tempMax: undefined
+        },
+        secondDay: {
+          id: undefined,
+          description: undefined,
+          tempMin: undefined,
+          tempMax: undefined
+        },
+        thirdDay: {
+          id: undefined,
+          description: undefined,
+          tempMin: undefined,
+          tempMax: undefined
+        }
       },
-      secondDay: {
-        id: undefined,
-        description: undefined,
-        tempMin: undefined,
-        tempMax: undefined
-      },
-      thirdDay: {
-        id: undefined,
-        description: undefined,
-        tempMin: undefined,
-        tempMax: undefined
-      }
-    },
-    loading: true,
-    error: false
+      loading: true,
+      error: false
+    };
   }
 
-  async updateData () {
+  async updateData() {
     const weatherData = await getData(
       this.props.city,
       this.props.countryISO,
       "weather"
-    )
+    );
     const forecastData = await getData(
       this.props.city,
       this.props.countryISO,
       "forecast"
-    )
+    );
 
     try {
       this.setState({
@@ -82,25 +85,25 @@ class WeatherCard extends React.Component {
           }
         },
         loading: false
-      })
+      });
     } catch (e) {
       this.setState({
         error: true,
         loading: false
-      })
+      });
     }
   }
 
-  async componentDidMount () {
-    this.updateData()
-    this.timer = setInterval(() => this.updateData(), 300000)
+  async componentDidMount() {
+    this.updateData();
+    this.timer = setInterval(() => this.updateData(), 300000);
   }
 
-  async componentWillUnmount () {
-    clearInterval(this.timer)
+  async componentWillUnmount() {
+    clearInterval(this.timer);
   }
 
-  render () {
+  render() {
     return (
       <div className={styles.container}>
         {this.state.loading ? (
@@ -137,7 +140,7 @@ class WeatherCard extends React.Component {
           </div>
         )}
       </div>
-    )
+    );
   }
 }
 
@@ -147,6 +150,6 @@ WeatherCard.propTypes = {
   countryISO: PropTypes.string,
   cityImg: PropTypes.string,
   timezone: PropTypes.string
-}
+};
 
-export default WeatherCard
+export default WeatherCard;

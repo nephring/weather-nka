@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import getConditionIcon from "./../../icons/conditionIconGetter"
+import getConditionIcon from "./../../icons/conditionIconGetter";
 
-import styles from "./forecast.module.scss"
+import styles from "./forecast.scss";
 
 class Forecast extends React.Component {
-  render () {
+  render() {
     return (
       <div className={styles.container}>
         <div className={styles.icon}>
@@ -22,7 +22,7 @@ class Forecast extends React.Component {
           </p>
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -33,6 +33,6 @@ Forecast.propTypes = {
   }),
   isDay: PropTypes.bool,
   day: PropTypes.string
-}
+};
 
-export default Forecast
+export default Forecast;

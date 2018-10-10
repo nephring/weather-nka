@@ -1,4 +1,4 @@
-@import './../../app/variables.scss';
+@import "./../../variables.scss";
 
 .container {
   margin: 1%;
@@ -32,7 +32,7 @@
 
 .details {
   display: flex;
-  background-color: rgba(42, 47, 77, .8);
+  background-color: rgba(42, 47, 77, 0.8);
   width: $col5;
   justify-content: center;
 }
@@ -55,7 +55,7 @@
   100% {
     transform: rotate(360deg);
   }
-} 
+}
 
 @media screen and (max-width: 700px) {
   .card {

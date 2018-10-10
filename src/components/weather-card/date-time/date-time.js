@@ -1,8 +1,8 @@
-import React from "react"
-import moment from "moment-timezone"
-import PropTypes from "prop-types"
+import React from "react";
+import moment from "moment-timezone";
+import PropTypes from "prop-types";
 
-import styles from "./date-time.module.scss"
+import styles from "./date-time.scss";
 
 const getDate = timezone => {
   return (
@@ -18,8 +18,8 @@ const getDate = timezone => {
     `${moment()
       .tz(`${timezone}`)
       .format("YYYY")}`
-  )
-}
+  );
+};
 
 export const getTime = timezone => {
   return (
@@ -32,46 +32,49 @@ export const getTime = timezone => {
     `${moment()
       .tz(`${timezone}`)
       .format("ss")}`
-  )
-}
+  );
+};
 
 export const isDay = time => {
-  return time > "05:00:00" && time < "21:00:00"
-}
+  return time > "05:00:00" && time < "21:00:00";
+};
 
 class DateTime extends React.Component {
-  state = {
-    date: getDate(this.props.timezone),
-    time: getTime(this.props.timezone)
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: getDate(this.props.timezone),
+      time: getTime(this.props.timezone)
+    };
   }
 
-  changeDate () {
+  changeDate() {
     this.setState({
       date: getDate(this.props.timezone),
       time: getTime(this.props.timezone)
-    })
+    });
   }
 
-  componentDidMount () {
-    this.timer = setInterval(() => this.changeDate(), 1000)
+  componentDidMount() {
+    this.timer = setInterval(() => this.changeDate(), 1000);
   }
 
-  componentWillUnmount () {
-    clearInterval(this.timer)
+  componentWillUnmount() {
+    clearInterval(this.timer);
   }
 
-  render () {
+  render() {
     return (
       <div className={styles.container}>
         <p className={styles.time}>{this.state.time}</p>
         <p className={styles.date}>{this.state.date}</p>
       </div>
-    )
+    );
   }
 }
 
 DateTime.propTypes = {
   timezone: PropTypes.string
-}
+};
 
-export default DateTime
+export default DateTime;
