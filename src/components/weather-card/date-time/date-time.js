@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import styles from "./date-time.scss";
 
-const getDate = timezone => {
+export const getDate = timezone => {
   return (
     `${moment()
       .tz(`${timezone}`)
