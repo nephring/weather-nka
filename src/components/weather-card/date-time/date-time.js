@@ -74,7 +74,7 @@ class DateTime extends React.Component {
 }
 
 DateTime.propTypes = {
-  timezone: PropTypes.string
+  timezone: PropTypes.string.isRequired
 };
 
 export default DateTime;
