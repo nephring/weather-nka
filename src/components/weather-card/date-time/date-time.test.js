@@ -1,36 +1,36 @@
-import React from "react"
-import { shallow } from "enzyme"
+import React from "react";
+import { shallow } from "enzyme";
 
-import DateTime from "./date-time"
-import { getTime, getDate } from "./date-time"
+import DateTime from "./date-time";
+import { getTime, getDate } from "./../../../shared/utils";
 
 describe("date-time component", () => {
-  const timezone = "australia/sydney"
+  const timezone = "australia/sydney";
   const setup = () => {
-    return shallow(<DateTime timezone={timezone} />)
-  }
-  const date = getDate(timezone)
-  const time = getTime(timezone)
+    return shallow(<DateTime timezone={timezone} />);
+  };
+  const date = getDate(timezone);
+  const time = getTime(timezone);
 
   it("shoud have proper state based on timezone", () => {
-    const wrapper = setup()
+    const wrapper = setup();
 
-    expect(wrapper.state("date")).toBe(date)
-    expect(wrapper.state("time")).toBe(time)
-  })
+    expect(wrapper.state("date")).toBe(date);
+    expect(wrapper.state("time")).toBe(time);
+  });
 
   it("renders proper time and date based on timezone", () => {
-    const wrapper = setup()
+    const wrapper = setup();
     const timeFromState = wrapper
       .find("p")
       .at(0)
-      .text()
+      .text();
     const dateFromState = wrapper
       .find("p")
       .at(1)
-      .text()
+      .text();
 
-    expect(dateFromState).toBe(date)
-    expect(timeFromState).toBe(time)
-  })
-})
+    expect(dateFromState).toBe(date);
+    expect(timeFromState).toBe(time);
+  });
+});
