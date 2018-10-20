@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 import { getDate, getTime } from "../../../shared/utils";
 import styles from "./date-time.scss";
 
+export const isDay = time => {
+  return time > "05:00:00" && time < "21:00:00";
+};
+
 class DateTime extends React.Component {
   constructor(props) {
     super(props);
