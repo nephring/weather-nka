@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import moment from "moment-timezone";
 import * as _ from "lodash";
 
 import ConditionEntity from "./../condition-entity/condition-entity";
