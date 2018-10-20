@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
 class HumidityIcon extends React.Component {
   render() {
-    const { fill, size } = this.props
+    const { fill, size } = this.props;
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -28,19 +28,19 @@ class HumidityIcon extends React.Component {
           />
         </svg>
       </div>
-    )
+    );
   }
 }
 
 HumidityIcon.defaultProps = {
-  size: "40px",
-  height: "40px",
+  size: "25px",
+  height: "25px",
   fill: "#f8f8f8"
-}
+};
 
 HumidityIcon.propTypes = {
   size: PropTypes.string,
   fill: PropTypes.string
-}
+};
 
-export default HumidityIcon
+export default HumidityIcon;

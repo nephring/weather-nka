@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
 class WindIcon extends React.Component {
   render() {
-    const { fill, size } = this.props
+    const { fill, size } = this.props;
     return (
       <div style={{ display: "flex" }}>
         <svg
@@ -37,18 +37,18 @@ class WindIcon extends React.Component {
           </g>
         </svg>
       </div>
-    )
+    );
   }
 }
 
 WindIcon.defaultProps = {
-  size: "40px",
+  size: "25px",
   fill: "#f8f8f8"
-}
+};
 
 WindIcon.propTypes = {
   size: PropTypes.string,
   fill: PropTypes.string
-}
+};
 
-export default WindIcon
+export default WindIcon;
