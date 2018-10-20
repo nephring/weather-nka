@@ -13,16 +13,9 @@ import TemperatureIcon from "./../../icons/temperature";
 import PressureIcon from "./../../icons/pressure";
 
 import getConditionIcon from "./../../icons/conditionIconGetter";
-import { isDay, getTime } from "./../date-time/date-time";
+import { isDay, getTime, getFutureDay } from "../../../shared/utils";
 
 import styles from "./details.scss";
-
-const getFutureDay = (day, timezone) => {
-  return moment(new Date())
-    .add(day, "days")
-    .tz(`${timezone}`)
-    .format("dddd");
-};
 
 class Details extends React.Component {
   constructor(props) {
@@ -46,6 +39,7 @@ class Details extends React.Component {
       pressure,
       forecast
     } = this.props.data;
+    const { firstDay, secondDay, thirdDay } = forecast;
     const { timezone } = this.props;
 
     return (
@@ -64,11 +58,11 @@ class Details extends React.Component {
         <hr className={styles.separator} />
         <div className={styles.conditionSection}>
           <ConditionEntity
-            iconComponent={<HumidityIcon size={"25"} />}
+            iconComponent={<HumidityIcon />}
             value={`${humidity}%`}
           />
           <ConditionEntity
-            iconComponent={<TemperatureIcon size={"25"} />}
+            iconComponent={<TemperatureIcon />}
             value={
               <div className={styles.temps}>
                 <span>
@@ -83,27 +77,27 @@ class Details extends React.Component {
             }
           />
           <ConditionEntity
-            iconComponent={<WindIcon size={"25"} />}
+            iconComponent={<WindIcon />}
             value={`${windSpeed}m/s`}
           />
           <ConditionEntity
-            iconComponent={<PressureIcon size={"25"} />}
+            iconComponent={<PressureIcon />}
             value={`${pressure}hPa`}
           />
         </div>
         <div className={styles.forecast}>
           <Forecast
-            data={forecast.firstDay}
+            data={firstDay}
             day={this.state.getFirstDay}
             isDay={this.state.isDay}
           />
           <Forecast
-            data={forecast.secondDay}
+            data={secondDay}
             day={this.state.getSecondDay}
             isDay={this.state.isDay}
           />
           <Forecast
-            data={forecast.thirdDay}
+            data={thirdDay}
             day={this.state.getThirdDay}
             isDay={this.state.isDay}
           />
