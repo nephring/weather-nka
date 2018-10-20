@@ -35,10 +35,6 @@ export const getTime = timezone => {
   );
 };
 
-export const isDay = time => {
-  return time > "05:00:00" && time < "21:00:00";
-};
-
 class DateTime extends React.Component {
   constructor(props) {
     super(props);
