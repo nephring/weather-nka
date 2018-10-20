@@ -17,7 +17,8 @@
     "format": "prettier --write \"src/**/*.{js,jsx,css,json}\" ",
     "lint": "eslint \"**/*.{js,jsx}\"",
     "dev": "parcel src/index.html",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
