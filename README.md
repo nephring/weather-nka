@@ -42,7 +42,21 @@ npm run dev
 
 The application will be automatically navigated to http://localhost:1234.
 
-### Prettier & ESlint
+## Tests
+
+Tests have been written using Jest && Enzyme.
+
+- [Jest](https://jestjs.io/) - JavaScript testing framework
+- [Enzyme](https://airbnb.io/enzyme/) - JavaScript testing utility
+
+#### Running tests
+
+```
+npm run test
+npm run test:watch
+```
+
+## Prettier & ESlint
 
 You can format your code with Prettier and ESLint.
 
