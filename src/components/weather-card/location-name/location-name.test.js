@@ -15,6 +15,9 @@ describe("location name", () => {
   it("renders given city && country", () => {
     const cityContainer = wrapper.find(".city");
     const countryContainer = wrapper.find(".country");
+
+    expect(cityContainer.length).toEqual(1);
+    expect(countryContainer.length).toEqual(1);
     expect(cityContainer.text()).toEqual(_.upperFirst(props.city));
     expect(countryContainer.text()).toEqual(_.toUpper(props.country));
   });
