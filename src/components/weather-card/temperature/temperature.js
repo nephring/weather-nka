@@ -4,12 +4,10 @@ import PropTypes from "prop-types";
 import styles from "./temperature.scss";
 
 const Temperature = props => (
-  <div className={styles.container}>
-    <p className={styles.temp}>
-      {Math.floor(props.temp)}
-      &deg;
-    </p>
-  </div>
+  <p className={styles.temp}>
+    {Math.floor(props.temp)}
+    &deg;
+  </p>
 );
 
 Temperature.propTypes = {
