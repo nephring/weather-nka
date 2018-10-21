@@ -41,3 +41,9 @@ export const getFutureDay = (day, timezone) => {
     .tz(`${timezone}`)
     .format("dddd");
 };
+
+export const getDay = timezone => {
+  return moment(new Date())
+    .tz(timezone)
+    .format("dddd");
+};
